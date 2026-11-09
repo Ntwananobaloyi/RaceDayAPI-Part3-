@@ -3,4 +3,5 @@ obj/
 .vs/
 *.user
 wwwroot/uploads/*
-!wwwroot/uploads/banners/.gitkeep
+!wwwroot/uploads/banners/.gitkeep 
+ 
