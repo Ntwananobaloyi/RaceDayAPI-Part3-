@@ -1,4 +1,4 @@
-namespace RaceDayAPI.Services
+namespace RaceDayAPI.Services 
 {
     public static class PasswordHasher
     {
