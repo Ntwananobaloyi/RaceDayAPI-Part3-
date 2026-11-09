@@ -1,16 +1,9 @@
-DOCKERFILE
+RaceDay
 
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /src
-COPY ["RaceDayMVC.csproj", "./"]
-RUN dotnet restore "RaceDayMVC.csproj"
-COPY . .
-RUN dotnet publish "RaceDayMVC.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RaceDay is a race-event platform for South African sports events. Organisers create events (runs, walks and cycles), add categories, confirm enrolments and capture results. Participants browse events, enrol in a category, track their enrolments and view their race history.
 
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
-WORKDIR /app
-COPY --from=build /app/publish .
-ENV ASPNETCORE_URLS=http://+:80
-ENV ASPNETCORE_ENVIRONMENT=Production
-EXPOSE 80
-ENTRYPOINT ["dotnet", "RaceDayMVC.dll"]
+The solution has two projects:
+
+Project	What it is
+RaceDayAPI	RESTful ASP.NET Core Web API (.NET 8), in-memory EF Core database, JWT authentication, BCrypt password hashing, Swagger
+RaceDayMVC	ASP.NET Core MVC web front end (.NET 8). It talks to the API only, stores the JWT in session, and can be run in Docker
