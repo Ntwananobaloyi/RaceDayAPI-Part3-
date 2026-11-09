@@ -78,3 +78,5 @@ Authentication. POST /api/auth/login returns a JWT plus the user's ID, name and 
 Banner storage. Banners are uploaded to POST /api/events/{id}/banner and handled through the IBlobService interface. LocalBlobService saves the file in wwwroot/uploads/banners/ and returns a URL built from ApiSettings:PublicBaseUrl. The Azure.Storage.Blobs package is installed so a real Azure BlobService can replace the local one by changing one line in Program.cs. No Azure account is needed.
 
 API endpoints
+Youtube- https://youtu.be/2ashDd0dDEY?si=w1T7AoFL2Nxw8ws_
+
