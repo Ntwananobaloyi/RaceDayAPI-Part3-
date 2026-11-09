@@ -1,4 +1,4 @@
-namespace RaceDayAPI.Models
+namespace RaceDayAPI.Models 
 {
     public class RegisterRequest
     {
